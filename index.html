@@ -4,9 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="theme.css" />
     <title>Stats Widget</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .widgets {
+        max-width: 620px;
+        width: 100%;
+      }
+      .sr-widget {
+        border: rgba(0, 0, 0, 0.12) solid 1px;
+        margin-bottom: 24px;
+      }
+      .sr-widget-title {
+        font-weight: bold;
+        padding-bottom: 4px;
+      }
+    </style>
+    <script
+      type="application/javascript"
+      src="https://widgets.sir.sportradar.com/sportradar/widgetloader"
+      async
+    ></script>
   </head>
   <body>
-    This page is for stats widget
+    <script>
+      (function (a, b, c, d, e, f, g, h, i) {
+        a[e] ||
+          ((i = a[e] =
+            function () {
+              (a[e].q = a[e].q || []).push(arguments);
+            }),
+          (i.l = 1 * new Date()),
+          (i.o = f),
+          (g = b.createElement(c)),
+          (h = b.getElementsByTagName(c)[0]),
+          (g.async = 1),
+          (g.src = d),
+          g.setAttribute("n", e),
+          h.parentNode.insertBefore(g, h));
+      })(
+        window,
+        document,
+        "script",
+        "https://widgets.sir.sportradar.com/sportradar/widgetloader",
+        "SIR",
+        {
+          theme: false, // using custom theme
+          language: "en",
+        }
+      );
+      SIR("addWidget", ".sr-widget-1", "match.basketball.boxScore", {
+        matchId: 40463227,
+        disableWidgetHeader: true,
+        disableTeamPicker: true,
+        compactMode: true,
+      });
+    </script>
+    <!-- <div
+      id="sr-widget"
+      data-sr-widget="match.basketball.boxScore"
+      data-sr-match-id="27402448"
+    ></div> -->
+    <div class="widgets">
+      <div><div class="sr-widget sr-widget-1"></div></div>
+    </div>
   </body>
 </html>
